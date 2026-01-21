@@ -1,0 +1,294 @@
+/* =========================================
+   ESTILO PREMIUM - CCCAPS (MODO DARK)
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #0a0a0a;       /* Negro profundo */
+    --card-bg: #141414;        /* Gris muy oscuro */
+    --text-main: #ffffff;      /* Blanco */
+    --text-muted: #a0a0a0;     /* Gris claro */
+    --accent: #ffffff;         /* Acento blanco puro */
+    --danger: #ff4d4d;         /* Rojo para errores/eliminar */
+    --success: #00ff88;        /* Verde neón estilo urbano */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Roboto', sans-serif; /* Texto cuerpo */
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .brand-font {
+    font-family: 'Oswald', sans-serif; /* Títulos estilo urbano */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* ================= HEADER ================= */
+header {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; /* Ajusta según tu logo real */
+    filter: brightness(0) invert(1); /* Vuelve el logo blanco si es negro */
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+nav a:hover, nav a.activo {
+    color: var(--accent);
+}
+
+/* ================= HERO BANNER ================= */
+.banner {
+    height: 85vh; /* Pantalla casi completa */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
+                url('../imagenesropa/banner.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+/* Botones Generales */
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background: var(--accent);
+    color: #000;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: #ccc;
+    transform: translateY(-2px);
+}
+
+/* ================= FILTROS ================= */
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 40px 20px;
+}
+
+.filtro {
+    background: transparent;
+    border: 1px solid #333;
+    color: var(--text-muted);
+    padding: 8px 20px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    transition: 0.3s;
+}
+
+.filtro.activo, .filtro:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ================= GRID PRODUCTOS ================= */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.producto {
+    background: var(--card-bg);
+    padding: 15px;
+    transition: transform 0.3s ease;
+    border: 1px solid #222;
+}
+
+.producto:hover {
+    border-color: #444;
+    transform: translateY(-5px);
+}
+
+/* Imagen con efecto Swap (Adelante/Atrás) */
+.img-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.1; /* Formato vertical moderno */
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #222; /* Placeholder mientras carga */
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+    transition: opacity 0.4s ease;
+}
+
+.img-box .back { opacity: 0; }
+.producto:hover .img-box .back { opacity: 1; }
+
+.producto h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.producto .precio {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+}
+
+.acciones .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.8rem;
+}
+
+.ver-detalle {
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: #666;
+}
+
+/* ================= CARRITO ================= */
+#carrito {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 350px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 2000;
+    transform: translateX(120%);
+    transition: transform 0.3s ease-in-out;
+}
+
+#carrito.visible {
+    transform: translateX(0);
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+#lista-carrito li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 5px;
+}
+
+.eliminar {
+    background: none; border: none; color: var(--danger); cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #050505;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 3000;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; gap: 15px; }
+    .productos { grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; } /* 2 columnas en móvil */
+    .banner-content h1 { font-size: 2.5rem; }
+    #carrito { width: 100%; top: auto; bottom: 0; border-radius: 15px 15px 0 0; }
+    .btn { padding: 10px 20px; }
+}
