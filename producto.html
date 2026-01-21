@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle del Producto | CCCAPS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+      .detalle-container {
+          max-width: 1100px;
+          margin: 40px auto;
+          padding: 20px;
+          display: grid;
+          grid-template-columns: 1fr 1fr; /* Dos columnas en PC */
+          gap: 40px;
+          align-items: start;
+      }
+      .galeria-detalle img { width: 100%; margin-bottom: 10px; border: 1px solid #222; }
+      .info-detalle h1 { font-size: 2rem; margin-bottom: 10px; }
+      .precio-detalle { font-size: 1.8rem; font-weight: bold; margin-bottom: 25px; color: white; }
+      .descripcion-detalle { color: #ccc; line-height: 1.6; margin-bottom: 30px; white-space: pre-line; }
+      @media (max-width: 768px) {
+          .detalle-container { grid-template-columns: 1fr; } /* 1 columna en celular */
+          .info-detalle h1 { font-size: 1.5rem; }
+      }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <a href="index.html"><img src="imagenesropa/logo.png" class="logo"></a>
+    <nav>
+      <a href="index.html">INICIO</a>
+      <a href="tienda.html">TIENDA</a>
+    </nav>
+    <a href="tienda.html" class="btn-icon">🛒</a>
+  </div>
+</header>
+
+<section class="detalle-container">
+    
+    <div class="galeria-detalle" id="contenedor-imagenes">
+        <img id="img-principal" src="" alt="">
+        <img id="img-secundaria" src="" style="display: none;" alt="">
+    </div>
+
+    <div class="info-detalle">
+        <h1 id="nombre-producto">Cargando...</h1>
+        <p class="precio-detalle" id="precio-producto"></p>
+        
+        <div class="descripcion-detalle" id="descripcion-producto">
+            </div>
+
+        <button id="btn-agregar-detalle" class="btn" style="width: 100%; padding: 15px; font-size: 1rem;">AGREGAR AL CARRITO</button>
+        
+        <a href="tienda.html" style="display: block; margin-top: 20px; text-align: center; color: #888; text-decoration: underline;">← Volver a la tienda</a>
+    </div>
+
+</section>
+
+<footer>
+  <p>© 2026 CCCAPS STREETWEAR</p>
+</footer>
+
+<script src="js/producto.js"></script>
+
+</body>
+</html>
