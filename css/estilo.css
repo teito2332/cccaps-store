@@ -292,3 +292,83 @@ footer {
     #carrito { width: 100%; top: auto; bottom: 0; border-radius: 15px 15px 0 0; }
     .btn { padding: 10px 20px; }
 }
+
+/* =========================================
+   MEJORAS VISUALES PREMIUM (Pega esto al final de estilo.css)
+   ========================================= */
+
+/* 1. Tipografía más espaciada y elegante */
+h1, h2, h3, .brand-font, .btn, nav a {
+    letter-spacing: 1.5px !important; /* Fuerza más espacio entre letras */
+}
+
+h1 { /* Título del banner */
+    text-shadow: 0 5px 15px rgba(0,0,0,0.8) !important;
+}
+
+
+/* 2. Header más sofisticado (Efecto vidrio) */
+header {
+    background: rgba(5, 5, 5, 0.75) !important; /* Más transparente */
+    backdrop-filter: blur(20px) !important; /* Mayor desenfoque */
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+nav a {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+nav a:hover, nav a.activo {
+    opacity: 1;
+    color: #fff !important;
+}
+
+
+/* 3. Tarjetas de Producto con Profundidad */
+.producto {
+    background: linear-gradient(145deg, #121212, #0a0a0a) !important; /* Degradado sutil */
+    border: 1px solid #222 !important;
+    box-shadow: 0 10px 20px -10px rgba(0,0,0,0.5) !important; /* Sombra inicial suave */
+    padding: 20px !important; /* Más aire dentro de la tarjeta */
+    border-radius: 0 !important; /* Bordes rectos, más urbano */
+}
+
+/* Efecto al pasar el mouse sobre el producto */
+.producto:hover {
+    border-color: #fff !important; /* Borde blanco brillante */
+    transform: translateY(-10px) scale(1.02) !important; /* Sube y crece un poquito */
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.8) !important; /* Sombra profunda */
+    z-index: 10;
+}
+
+.producto h3 {
+    font-size: 1rem !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    font-weight: 400 !important;
+    color: #e0e0e0 !important;
+}
+
+.producto .precio {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    margin-bottom: 20px !important;
+    display: block;
+}
+
+/* 4. Botones con más impacto */
+.btn, .btn.add-cart {
+    border-radius: 0 !important; /* Botones cuadrados urbanos */
+    text-transform: uppercase;
+    font-weight: 700 !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    border: 1px solid transparent;
+}
+
+.btn:hover, .btn.add-cart:hover {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px rgba(255,255,255,0.4) !important; /* Resplandor blanco */
+    transform: translateY(-3px) !important;
+}
